@@ -1,4 +1,4 @@
-import { useState, Fragment } from 'react';
+import { useState, Fragment, useEffect } from 'react';
 import ProductsList from './ProductsList';
 import styles from './Products.module.css'
 
@@ -7,26 +7,28 @@ const Products = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    fetch('http://localhost:4001/products')
-    .then(response => {
-        if(!response.ok){
-            throw Error('Could not get data');
-        }
-        return response.json();
-    }).then(data => {
-        setIsLoading(false);
-        setProducts(data);
-    }).catch(err => {
-        setIsLoading(false)
-        setError(err.message);
-    });
+    useEffect(() => {
+        fetch('http://localhost:4001/products')
+        .then(response => {
+            if(!response.ok){
+                throw Error('Could not get data');
+            }
+            return response.json();
+        }).then(data => {
+            setIsLoading(false);
+            setProducts(data);
+        }).catch(err => {
+            setIsLoading(false)
+            setError(err.message);
+        });
+    }, [])
 
     return(
-        <div className='test'>
-            {products && <div className={styles.products}><ProductsList products={products}/></div>}
+        <Fragment key={100}>
+            {products && <div key={1} className={styles.products}><ProductsList products={products}/></div>}
             {isLoading && <div>Loading...</div>}
             {error && <div>{error}</div>}
-        </div>
+        </Fragment>
     )
 }
 

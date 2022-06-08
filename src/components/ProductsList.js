@@ -9,7 +9,7 @@ const ProductsList = (props) => {
             )
         })
         return(
-            <li className={styles.product}>
+            <li className={styles.product} key={Math.random() * 1000}>
                 <p>{product.ProductName}</p>
                 <p>£{product.UnitPrice}</p>
                 <p>Items in stock: {product.UnitsInStock}</p>
