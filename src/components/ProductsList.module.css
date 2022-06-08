@@ -1,0 +1,25 @@
+.product{
+    text-align: center;
+    padding: 2%;
+    background-color: blueviolet;
+    color: white;
+    list-style-type: none;
+    width: 200px;
+    border-radius: 5%;
+    margin: 5%;
+}
+
+.btn{
+    cursor: pointer;
+    color: blueviolet;
+    background-color: white;
+    border-radius: 25px;
+    border-color: white;
+    padding: 5%;
+    transition: ease-in-out 0.3s;
+}
+
+.btn:hover{
+    color: white;
+    background-color: blueviolet;
+}
