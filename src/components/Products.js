@@ -9,23 +9,23 @@ const Products = () => {
 
     useEffect(() => {
         fetch('http://localhost:4001/products')
-        .then(response => {
-            if(!response.ok){
-                throw Error('Could not get data');
-            }
-            return response.json();
-        }).then(data => {
-            setIsLoading(false);
-            setProducts(data);
-        }).catch(err => {
-            setIsLoading(false)
-            setError(err.message);
-        });
+    .then(response => {
+        if(!response.ok){
+            throw Error('Could not get data');
+        }
+        return response.json();
+    }).then(data => {
+        setIsLoading(false);
+        setProducts(data);
+    }).catch(err => {
+        setIsLoading(false)
+        setError(err.message);
+    });
     }, [])
 
     return(
-        <Fragment key={100}>
-            {products && <div key={1} className={styles.products}><ProductsList products={products}/></div>}
+        <Fragment>
+            {products && <div className={styles.products}><ProductsList products={products}/></div>}
             {isLoading && <div>Loading...</div>}
             {error && <div>{error}</div>}
         </Fragment>

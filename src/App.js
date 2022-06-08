@@ -5,7 +5,9 @@ import Products from "./components/Products";
 
 
 function App() {
+  
   return (
+    
     <React.Fragment>
       <Header />
       <Cart />

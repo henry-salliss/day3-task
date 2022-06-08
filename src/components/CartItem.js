@@ -3,7 +3,6 @@ const CartItem = (props) => {
         <div>
             <p>{props.name}</p>
             <p>{props.price}</p>
-            <p>{props.quantity}</p>
         </div>
     )
 };

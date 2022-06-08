@@ -1,24 +1,10 @@
-import styles from './ProductsList.module.css';
+import ProductItem from './ProductItem';
 
 const ProductsList = (props) => {
     
     const list = props.products.map(product => {
-        const suppliers = product.Suppliers.map(supp => {
-            return(
-                <p>{supp.CompanyName}</p>
-            )
-        })
         return(
-            <li className={styles.product} key={Math.random() * 1000}>
-                <p>{product.ProductName}</p>
-                <p>£{product.UnitPrice}</p>
-                <p>Items in stock: {product.UnitsInStock}</p>
-                <div>
-                    <p>Supplied from:</p>
-                    {suppliers}
-                </div>
-                <button className={styles.btn}>Add to cart</button>
-            </li>
+            <ProductItem key={product.id} id={product.id} name={product.ProductName} price={product.UnitPrice} stock={product.UnitsInStock} suppliers={product.Suppliers}/>
         )
     })
 
