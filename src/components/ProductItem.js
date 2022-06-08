@@ -9,7 +9,8 @@ const ProductItem = (props) => {
         context.addCartItem({
             name: props.name,
             price: props.price,
-            id: props.id
+            id: props.id,
+            quantity: 1
         })
     }
 

@@ -1,0 +1,22 @@
+.cart{
+    background-color: blueviolet;
+    padding: 1%;
+    color: white;
+    border-radius: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.cartHeader{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 25px;
+    padding: 1%;
+    margin: 2% 5% 2% 5%;
+}

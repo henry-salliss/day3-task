@@ -1,0 +1,38 @@
+.item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2% 3% 2% 3%;
+    text-align: center;
+    border: white solid 2px;
+    padding: 2%;
+    border-radius: 25px;
+    width: 150px;
+    height: 130px;
+    
+}
+
+.delete{
+    width: fit-content;
+    color: white;
+    background-color: blueviolet;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.delete:hover{
+    transform: scale(1.5);
+}
+
+.add{
+    background-color: blueviolet;
+    color: white;
+    border: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.add:hover{
+    transform: scale(1.2);
+}
